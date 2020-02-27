@@ -1,9 +1,10 @@
 import { RECEIVE_API_DATA } from "../actions/action-types";
 
- const dataReduser = (state = {}, { type, data }) => {
+ const dataReduser = (state = [], { type, payload }) => {
   switch (type) {
-    case RECEIVE_API_DATA:
-      return data;
+    case RECEIVE_API_DATA:      
+      return payload;
+
     default:
       return state;
   }

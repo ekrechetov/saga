@@ -15,22 +15,37 @@
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(53, 46, 49);
   }
-  &-list {
-    margin-top: 50px;
-    padding: 0;
-    list-style: none;
-    text-align: center;
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    &-item {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      color: rgb(53, 46, 49);
-      line-height: 30px;
+    &-list {
+      flex-basis: 50%;
+      background-color: dodgerblue;
+      margin-top: 50px;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+
+      &-item {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: rgb(53, 46, 49);
+        line-height: 30px;
+      }
+      &-item:hover {
+        color: rgb(17, 16, 17);
+        font-weight: 600;
+        background-color: rgb(209, 207, 207);
+        cursor: pointer;
+      }
     }
-    &-item:hover {
-      color: rgb(17, 16, 17);
-      font-weight: 600;
-      cursor: pointer;
+    &-details {
+      flex-basis: 50%;
+      color: darkgreen;
+      background-color: darkseagreen;
+
     }
   }
 }

@@ -1,0 +1,36 @@
+.home {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+
+  &-title{
+    margin: 20px 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(201, 57, 69);
+  }
+  &-description {
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(53, 46, 49);
+  }
+  &-list {
+    margin-top: 50px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    &-item {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      color: rgb(53, 46, 49);
+      line-height: 30px;
+    }
+    &-item:hover {
+      color: rgb(17, 16, 17);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

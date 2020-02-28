@@ -17,20 +17,18 @@
   }
   &-content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
 
     &-list {
-      flex-basis: 50%;
-      background-color: dodgerblue;
-      margin-top: 50px;
       padding: 0;
       list-style: none;
       text-align: left;
 
       &-item {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 18px;
+        font-size: 20px;
         color: rgb(53, 46, 49);
         line-height: 30px;
       }
@@ -42,10 +40,7 @@
       }
     }
     &-details {
-      flex-basis: 50%;
-      color: darkgreen;
-      background-color: darkseagreen;
-
+      flex-basis: 65%;
     }
   }
 }

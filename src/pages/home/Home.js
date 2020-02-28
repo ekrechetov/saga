@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { requestApiData } from "../actions/requestApiData";
-import { requestApiDataUrl } from "../actions/requestApiDataUrl";
-import Button from "../components/button/Button";
-import Details from "../components/details/Details";
+import { requestApiData } from "../../actions/requestApiData";
+import { requestApiDataUrl } from "../../actions/requestApiDataUrl";
+import Button from "../../components/button/Button";
+import Details from "../../components/details/Details";
 import './home.scss';
 
 class Home extends Component {
@@ -16,12 +16,11 @@ class Home extends Component {
   }
 
   getItem(url) {
-    this.props.requestApiDataUrl(url);   
+    this.props.requestApiDataUrl(url);    
   }
 
   render() {
     const results =  this.props.data;
-    console.log(this.props.itemInfo);
     return(
       <div>
         <div className="home">
@@ -45,10 +44,12 @@ class Home extends Component {
             </ul>
             }
             <div className="home-content-details">
-              <Details />
+              {this.props.itemInfo.isOpen
+              ? <Details />
+              : null
+              }
             </div>
           </div>
-
         </div>        
       </div>    
     );

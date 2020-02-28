@@ -5,16 +5,28 @@ import './details.scss';
 const Details = (props) => {
   const keys = Object.keys(props.itemInfo);
   const values = Object.values(props.itemInfo);
-
   return(
-    <ul className="details">
-      {
-        keys.map((element, index) => {
-        if(index < 7)
-        return <li key={index}><span>{element}</span><span>{values[index]}</span></li> 
-        })
-      }
-    </ul>
+    <div className="details-container">
+      <h2 className="details-title">
+        {props.itemInfo.name}
+      </h2>
+      <ul className="details">
+        {
+          keys.map((element, index) => {
+            if(index < 7) {
+              return(
+                <li key={index}
+                    className="details-list"
+                >
+                  <div className="detail-list-item">{`${element}:`}</div> 
+                  <div className="detail-list-item">{values[index]}</div>
+                </li>
+              )
+            }   
+          })
+        }
+      </ul>
+    </div>
   )
 }  
 

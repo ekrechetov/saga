@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 import './details.scss';
 
 const Details = (props) => {
-  const keys = Object.keys(props.itemInfo);
-  const values = Object.values(props.itemInfo);
+  const keys = Object.keys(props.itemInfo.itemData);
+  const values = Object.values(props.itemInfo.itemData);
   return(
     <div className="details-container">
       <h2 className="details-title">
-        {props.itemInfo.name}
+        {props.itemInfo.itemData.name}
       </h2>
       <ul className="details">
         {

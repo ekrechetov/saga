@@ -8,10 +8,8 @@ import Details from "../../components/details/Details";
 import './home.scss';
 
 class Home extends Component {
-  state = {isClicked: false}
 
   clickBtn() {
-    this.setState({isClicked: true});
     this.props.requestApiData();    
   }
 
@@ -20,7 +18,7 @@ class Home extends Component {
   }
 
   render() {
-    const results =  this.props.data;
+    const results =  this.props.data.data;
     return(
       <div>
         <div className="home">
@@ -31,7 +29,7 @@ class Home extends Component {
           <div className="home-content">
             {
             !results.length 
-            ?<h2>{this.state.isClicked && 'loading...'}</h2> 
+            ?<h2>{this.props.data.loading && 'loading...'}</h2> 
             :<ul className="home-content-list">
               {results.map((item, index) => {
                 return  <li key={index}
@@ -44,9 +42,11 @@ class Home extends Component {
             </ul>
             }
             <div className="home-content-details">
-              {this.props.itemInfo.isOpen
-              ? <Details />
-              : null
+              {this.props.itemInfo.loading
+              ? <h2>loading...</h2>
+              : this.props.itemInfo.error
+                ? <p>Error, try again</p>
+                : JSON.stringify(this.props.itemInfo.itemData) == '{}' || <Details />              
               }
             </div>
           </div>
